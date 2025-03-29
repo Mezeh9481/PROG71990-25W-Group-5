@@ -75,3 +75,42 @@ void viewTasks(TaskList* list) {
         printf("%d. %s\n", list->tasks[i].id, list->tasks[i].name);
     }
 }
+
+void searchTask(TaskList* list) {
+    if (list->count == 0) {
+        printf("No tasks available to search!\n");
+        return;
+    }
+
+    char searchTerm[MAX_NAME_LENGTH];
+    printf("Enter task name or ID to search: ");
+    fgets(searchTerm, MAX_NAME_LENGTH, stdin);
+    searchTerm[strcspn(searchTerm, "\n")] = '\0'; // Removes newline character
+
+    int found = 0;
+    for (int i = 0; i < list->count; i++) {
+        if (strcasecmp(list->tasks[i].name, searchTerm) == 0 || atoi(searchTerm) == list->tasks[i].id) {
+            printf("Task found: ID %d, Name: %s\n", list->tasks[i].id, list->tasks[i].name);
+            found = 1;
+            break;
+        }
+    }
+
+    if (!found) {
+        printf("Task not found\n");
+    }
+}
+
+void saveTasksToFile(TaskList* list, const char* filename) {
+    FILE* file = fopen(filename, "w");
+    if (!file) {
+        printf("Error opening file for writing\n");
+        return;
+    }
+
+    for (int i = 0; i < list->count; i++) {
+        fprintf(file, "%d,%s\n", list->tasks[i].id, list->tasks[i].name);
+    }
+    fclose(file);
+    printf("Task saved\n");
+}

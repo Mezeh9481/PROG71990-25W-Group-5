@@ -9,4 +9,11 @@ void displayMenu();
 // Function to handle user choices
 void handleUserChoice();
 
+// Function for searching tasks
+void searchTask(TaskList* list);
+
+void saveTasksToFile(TaskList* list, const char* filename);
+
+void loadTasksToFile(TaskList* list, const char* filename);
+
 #endif

@@ -8,7 +8,9 @@ void displayMenu() {
     printf("2. Delete Task\n");
     printf("3. Update Task\n");
     printf("4. View Tasks\n");
-    printf("5. Exit\n");
+    printf("5. Search Task\n");
+    printf("6. Save Tasks\n");
+    printf("7. Exit\n");
     printf("======================\n");
     printf("Enter your choice: ");
 }
@@ -17,6 +19,7 @@ void handleUserChoice() {
     int choice;
     TaskList taskList;
     initTaskList(&taskList);
+    loadTasksFromFile(&taskList, "tasks.txt");
 
     do {
         displayMenu();
@@ -37,10 +40,16 @@ void handleUserChoice() {
             viewTasks(&taskList);
             break;
         case 5:
+            searchTaskTasks(&taskList);
+            break;
+        case 6:
+            saveTasksToFile(&taskList, "tasks.txt");
+            break;
+        case 7:
             printf("Exiting Task Manager. Goodbye!\n");
             break;
         default:
             printf("Invalid choice, please try again.\n");
         }
-    } while (choice != 5);
+    } while (choice != 7);
 }
