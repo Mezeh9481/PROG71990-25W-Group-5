@@ -89,7 +89,7 @@ void searchTask(TaskList* list) {
 
     int found = 0;
     for (int i = 0; i < list->count; i++) {
-        if (strcasecmp(list->tasks[i].name, searchTerm) == 0 || atoi(searchTerm) == list->tasks[i].id) {
+        if(_stricmp(list->tasks[i].name, searchTerm) == 0 || atoi(searchTerm) == list->tasks[i].id) {
             printf("Task found: ID %d, Name: %s\n", list->tasks[i].id, list->tasks[i].name);
             found = 1;
             break;
