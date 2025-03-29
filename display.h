@@ -1,4 +1,3 @@
-#pragma once
 #ifndef DISPLAY_H
 #define DISPLAY_H
 
@@ -11,4 +10,4 @@ void displayRange();
 // Function to display all items
 void displayAll();
 
-#endif //end if
+#endif 
