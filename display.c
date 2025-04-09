@@ -27,11 +27,11 @@ void displayAll(TaskList* list) {
 // Display tasks within a range
 void displayRange(TaskList* list, int start, int end) {
     if (start < 0 || end >= list->count || start > end) {
-        printf("Invalid range.\n");
+        printf("Invalid range. Please enter numbers between 1 and %d.\n", list->count);
         return;
     }
 
-    printf("\n==== Task List (Range) ====\n");
+    printf("\nDisplaying tasks %d to %d:\n", start + 1, end + 1); // show 1-based to user
     for (int i = start; i <= end; i++) {
         printf("%d. %s\n", list->tasks[i].id, list->tasks[i].name);
     }
