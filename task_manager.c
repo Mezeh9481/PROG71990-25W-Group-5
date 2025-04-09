@@ -1,6 +1,7 @@
 ﻿#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include "task_manager.h"
+#include "display.h"
 
 void displayMenu() {
     printf("\n==== Task Manager ====\n");

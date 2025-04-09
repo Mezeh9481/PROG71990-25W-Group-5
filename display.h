@@ -11,4 +11,4 @@ void displayRange(TaskList* list, int start, int end);
 // Function to display all items
 void displayAll(TaskList* list);
 
-#endif //end if
+#endif 
