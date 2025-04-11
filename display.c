@@ -3,13 +3,19 @@
 #include "task_list.h"
 
 // Display a single task (task viewing)
-void displayItem(Task* task) {
-    if (task == NULL) {
-        printf("Task not found!\n");
+void displayItem(TaskList* list) {
+    if (list->count == 0) {
+        printf("No tasks available!\n");
         return;
     }
-    printf("\nTask ID: %d\n", task->id);
-    printf("Task Name: %s\n", task->name);
+    printf("\nTask List:\n");
+    for (int i = 0; i < list->count; i++) {
+        printf("ID: %d | Name: %s | Category: %s | Status: %s \n",
+            list->tasks[i].id,
+            list->tasks[i].name,
+            list->tasks[i].category,
+            list->tasks[i].completed ? "Completed" : "Incomplete");
+    }
 }
 
 // Display all tasks
@@ -18,9 +24,13 @@ void displayAll(TaskList* list) {
         printf("No tasks available.\n");
         return;
     }
-    printf("\n==== Task List ====\n");
+    printf("\nTask List:\n");
     for (int i = 0; i < list->count; i++) {
-        printf("%d. %s\n", list->tasks[i].id, list->tasks[i].name);
+        printf("ID: %d | Name: %s | Category: %s | Status: %s \n",
+            list->tasks[i].id,
+            list->tasks[i].name,
+            list->tasks[i].category,
+            list->tasks[i].completed ? "Completed" : "Incomplete");
     }
 }
 

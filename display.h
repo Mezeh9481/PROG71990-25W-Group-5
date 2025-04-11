@@ -3,7 +3,7 @@
 #include "task_list.h"
 
 // Function to display a single item
-void displayItem(Task* task);
+void displayItem(TaskList* task);
 
 // Function to display a range of items
 void displayRange(TaskList* list, int start, int end);

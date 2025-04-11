@@ -91,20 +91,20 @@ void updateTask(TaskList* list) {
 }
 
 // Displays all tasks in the list
-void viewTasks(TaskList* list) {
-    if (list->count == 0) {
-        printf("No tasks available!\n");
-        return;
-    }
-    printf("\nTask List:\n");
-    for (int i = 0; i < list->count; i++) {
-        printf("ID: %d | Name: %s | Category: %s | Status: %s \n",
-            list->tasks[i].id,
-            list->tasks[i].name,
-            list->tasks[i].category,
-            list->tasks[i].completed ? "Completed" : "Incomplete");
-    }
-}
+//void viewTasks(TaskList* list) {
+//    if (list->count == 0) {
+//        printf("No tasks available!\n");
+//        return;
+//    }
+//    printf("\nTask List:\n");
+//    for (int i = 0; i < list->count; i++) {
+//        printf("ID: %d | Name: %s | Category: %s | Status: %s \n",
+//            list->tasks[i].id,
+//            list->tasks[i].name,
+//            list->tasks[i].category,
+//            list->tasks[i].completed ? "Completed" : "Incomplete");
+//    }
+//}
 
 // Searches tasks by their name or ID
 void searchTask(TaskList* list) {
