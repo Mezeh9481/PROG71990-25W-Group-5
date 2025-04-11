@@ -1,6 +1,7 @@
-#define _CRT_SECURE_NO_WARNINGS
+﻿#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include "task_manager.h"
+#include "display.h"
 
 void displayMenu() {
     printf("\n==== Task Manager ====\n");
@@ -9,7 +10,7 @@ void displayMenu() {
     printf("3. Update Task\n");
     printf("4. Display Single Task\n");
     printf("5. Display Task Range\n");
-    printf("6. Display All Tasks\n");
+    printf("6. Display All Tasks\n"
     printf("7. Search Task\n");
     printf("8. Save Tasks\n");
     printf("9. Mark Task as complete\n");
@@ -17,6 +18,8 @@ void displayMenu() {
     printf("======================\n");
     printf("Enter your choice: ");
 }
+
+
 
 void handleUserChoice() {
     int choice;
