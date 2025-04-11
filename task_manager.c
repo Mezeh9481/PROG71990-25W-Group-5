@@ -10,7 +10,7 @@ void displayMenu() {
     printf("3. Update Task\n");
     printf("4. Display Single Task\n");
     printf("5. Display Task Range\n");
-    printf("6. Display All Tasks\n"
+    printf("6. Display All Tasks\n");
     printf("7. Search Task\n");
     printf("8. Save Tasks\n");
     printf("9. Mark Task as complete\n");
