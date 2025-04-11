@@ -7,7 +7,9 @@
 #include "display.h"
 
 void displayMenu() {
-    printf("\n==== Task Manager ====\n");
+    printf("========================\n");
+    printf("----- Task Manager -----\n");
+    printf("========================\n");
     printf("1. Add New Task\n");
     printf("2. Delete Task\n");
     printf("3. Update Task\n");
