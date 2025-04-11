@@ -4,6 +4,8 @@
 #pragma once
 #include "task_list.h"
 
+void printWelcome();
+
 // Displays the menu options to the user
 void displayMenu();
 

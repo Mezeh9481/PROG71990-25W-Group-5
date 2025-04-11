@@ -6,10 +6,13 @@
 #include "task_manager.h"
 #include "display.h"
 
-void displayMenu() {
+void printWelcome() {
     printf("========================\n");
     printf("----- Task Manager -----\n");
     printf("========================\n");
+}
+
+void displayMenu() {
     printf("1. Add New Task\n");
     printf("2. Delete Task\n");
     printf("3. Update Task\n");
@@ -24,8 +27,6 @@ void displayMenu() {
     printf("Enter your choice: ");
 }
 
-
-
 void handleUserChoice() {
     int choice;
     TaskList taskList;
@@ -33,6 +34,7 @@ void handleUserChoice() {
     loadTasksFromFile(&taskList, "tasks.txt");
 
     do {
+        printWelcome();
         displayMenu();
         scanf("%d", &choice);
         getchar(); // Consume newline
