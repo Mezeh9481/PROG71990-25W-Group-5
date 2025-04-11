@@ -10,8 +10,11 @@ void displayMenu() {
     printf("3. Update Task\n");
     printf("4. Display Single Task\n");
     printf("5. Display Task Range\n");
-    printf("6. Display All Tasks\n");
-    printf("7. Exit\n");
+    printf("6. Display All Tasks\n"
+    printf("7. Search Task\n");
+    printf("8. Save Tasks\n");
+    printf("9. Mark Task as complete\n");
+    printf("10. Exit\n");
     printf("======================\n");
     printf("Enter your choice: ");
 }
@@ -22,6 +25,7 @@ void handleUserChoice() {
     int choice;
     TaskList taskList;
     initTaskList(&taskList);
+    loadTasksFromFile(&taskList, "tasks.txt");
 
     do {
         displayMenu();
@@ -70,6 +74,15 @@ void handleUserChoice() {
             displayAll(&taskList);
             break;
         case 7:
+            searchTask(&taskList);
+            break;
+        case 8:
+            saveTasksToFile(&taskList, "tasks.txt");
+            break;
+        case 9:
+            markTaskAsComplete(&taskList);
+            break;
+        case 10:
             printf("Exiting Task Manager. Goodbye!\n");
             break;
         default:

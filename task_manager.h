@@ -1,12 +1,17 @@
-#ifndef TASK_MANAGER_H
-#define TASK_MANAGER_H
-
+#pragma once
 #include "task_list.h"
 
-// Function to display the menu
+// Displays the menu options to the user
 void displayMenu();
 
-// Function to handle user choices
+// Handles user input and executes appropriate task operations 
 void handleUserChoice();
 
-#endif
+// Allows user to search for tasks by name or ID
+void searchTask(TaskList* list);
+
+// Saves the current task list to a file
+void saveTasksToFile(TaskList* list, const char* filename);
+
+// Loads tasKs from a file into the task list
+void loadTasksFromFile(TaskList* list, const char* filename);
