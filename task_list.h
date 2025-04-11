@@ -1,3 +1,6 @@
+// PROG71990-25W - Section1 Group5 - GroupAssignment
+// Author: Austin
+// Co-author: Mario
 #pragma once
 #define MAX_TASKS 100
 #define MAX_NAME_LENGTH 50
@@ -22,5 +25,4 @@ void initTaskList(TaskList* list);
 void addTask(TaskList* list);
 void deleteTask(TaskList* list);
 void updateTask(TaskList* list);
-void viewTasks(TaskList* list);
 void markTaskAsComplete(TaskList* list);

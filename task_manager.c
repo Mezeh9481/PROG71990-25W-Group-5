@@ -1,4 +1,7 @@
-﻿#define _CRT_SECURE_NO_WARNINGS
+﻿// PROG71990-25W - Section1 Group5 - GroupAssignment
+// Author: Austin
+// Co-authors: Max, Mario
+#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include "task_manager.h"
 #include "display.h"

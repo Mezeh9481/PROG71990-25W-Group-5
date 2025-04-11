@@ -1,3 +1,5 @@
+// PROG71990-25W - Section1 Group5 - GroupAssignment
+// Author: Max
 #include <stdio.h>
 #include "display.h"
 #include "task_list.h"
@@ -40,7 +42,6 @@ void displayRange(TaskList* list, int start, int end) {
         printf("Invalid range. Please enter numbers between 1 and %d.\n", list->count);
         return;
     }
-
     printf("\nDisplaying tasks %d to %d:\n", start + 1, end + 1); // show 1-based to user
     for (int i = start; i <= end; i++) {
         printf("%d. %s\n", list->tasks[i].id, list->tasks[i].name);

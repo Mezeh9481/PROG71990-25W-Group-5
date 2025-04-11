@@ -1,3 +1,5 @@
+// PROG71990-25W - Section1 Group5 - GroupAssignment
+// Author: Austin, Mario
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <string.h>
@@ -89,23 +91,6 @@ void updateTask(TaskList* list) {
     }
     printf("Task not found!\n");
 }
-
-// Displays all tasks in the list
-//void viewTasks(TaskList* list) {
-//    if (list->count == 0) {
-//        printf("No tasks available!\n");
-//        return;
-//    }
-//    printf("\nTask List:\n");
-//    for (int i = 0; i < list->count; i++) {
-//        printf("ID: %d | Name: %s | Category: %s | Status: %s \n",
-//            list->tasks[i].id,
-//            list->tasks[i].name,
-//            list->tasks[i].category,
-//            list->tasks[i].completed ? "Completed" : "Incomplete");
-//    }
-//}
-
 // Searches tasks by their name or ID
 void searchTask(TaskList* list) {
     if (list->count == 0) {
