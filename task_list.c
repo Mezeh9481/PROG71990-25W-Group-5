@@ -10,20 +10,45 @@ void initTaskList(TaskList* list) {
     list->count = 0;
 }
 
+// Checks if a string is empty or contains whitespace
+int isEmpty(const char* str) {
+    while (*str) {
+        if (!isspace((unsigned char)*str)) {
+            return 0;
+        }
+        str++;
+    }
+    return 1;
+}
 // Add a new task to the list
 void addTask(TaskList* list) {
     if (list->count >= MAX_TASKS) {
         printf("Task list is full!\n");
         return;
     }
-    printf("Enter task name: ");
-    fgets(list->tasks[list->count].name, MAX_NAME_LENGTH, stdin);
-    list->tasks[list->count].name[strcspn(list->tasks[list->count].name, "\n")] = '\0'; // Remove newline
+    while (1) {
+        printf("Enter task name: ");
+        fgets(list->tasks[list->count].name, MAX_NAME_LENGTH, stdin);
+        list->tasks[list->count].name[strcspn(list->tasks[list->count].name, "\n")] = '\0'; // Remove newline
+        if (isEmpty(list->tasks[list->count].name)) {
+            printf("Task name cannot be empty. Enter valid task name.\n");
+        }
+        else {
+            break;
+        }
+    }
+    while (1) {
+        printf("Enter category (e.g., work, personal): ");
+        fgets(list->tasks[list->count].category, MAX_CATEGORY_LENGTH, stdin);
+        list->tasks[list->count].category[strcspn(list->tasks[list->count].category, "\n")] = '\0';
 
-    printf("Enter category (e.g., work, personal): ");
-    fgets(list->tasks[list->count].category, MAX_CATEGORY_LENGTH, stdin);
-    list->tasks[list->count].category[strcspn(list->tasks[list->count].category, "\n")] = '\0';
-
+        if (isEmpty(list->tasks[list->count].category)) {
+            printf("Category cannot be empty. Enter valid category.\n");
+        }
+        else {
+            break;
+        }
+    }
     list->tasks[list->count].completed = 0;
     list->tasks[list->count].id = list->count + 1;
     list->count++;

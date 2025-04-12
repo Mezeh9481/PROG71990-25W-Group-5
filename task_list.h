@@ -22,6 +22,7 @@ typedef struct {
 
 // Function prototypes
 void initTaskList(TaskList* list);
+int isEmpty(const char* str);
 void addTask(TaskList* list);
 void deleteTask(TaskList* list);
 void updateTask(TaskList* list);
