@@ -16,3 +16,5 @@ MARIO FOCUS:
 - Searching for a task
 - Saving accumulated data to file
 - Loading accumulated data from disk
+- Marking tasks as complete (Addtional Feature)
+- Seperation of tasks into categories (Addtional feature)
