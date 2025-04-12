@@ -95,5 +95,5 @@ void handleUserChoice() {
         default:
             printf("Invalid choice, please try again.\n");
         }
-    } while (choice != 7);
+    } while (choice != 10);
 }
